@@ -16,6 +16,11 @@ import android.view.MenuItem;
 public class MainActivity extends AppCompatActivity
     implements NavigationView.OnNavigationItemSelectedListener {
 
+  /**
+   * 안드로이드 기본 Drawer 예제 소스가 업그레이드되어
+   * 기존 소스 보다 사용이 편리하고 소스코드의 양이 줄어들어
+   * 기본 예제 소스를 사용함
+   */
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -27,14 +32,14 @@ public class MainActivity extends AppCompatActivity
     fab.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
+        // FloatingButton을 사용하려면 아래에 넣으면 된다.
         Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
             .setAction("Action", null).show();
       }
     });
 
     DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-    ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-        this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+    ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
     drawer.setDrawerListener(toggle);
     toggle.syncState();
 
@@ -54,44 +59,35 @@ public class MainActivity extends AppCompatActivity
 
   @Override
   public boolean onCreateOptionsMenu(Menu menu) {
-    // Inflate the menu; this adds items to the action bar if it is present.
+    // Memu Item 지정
     getMenuInflater().inflate(R.menu.main, menu);
     return true;
   }
 
   @Override
   public boolean onOptionsItemSelected(MenuItem item) {
-    // Handle action bar item clicks here. The action bar will
-    // automatically handle clicks on the Home/Up button, so long
-    // as you specify a parent activity in AndroidManifest.xml.
     int id = item.getItemId();
-
-    //noinspection SimplifiableIfStatement
     if (id == R.id.action_settings) {
       return true;
     }
-
     return super.onOptionsItemSelected(item);
   }
 
+  /**
+   * Drawer Menu 연결 지정
+   * 항목은 /res/menu/drawer.xml에 있다.
+   */
   @SuppressWarnings("StatementWithEmptyBody")
   @Override
   public boolean onNavigationItemSelected(MenuItem item) {
-    // Handle navigation view item clicks here.
     int id = item.getItemId();
 
     if (id == R.id.nav_camera) {
-      // Handle the camera action
     } else if (id == R.id.nav_gallery) {
-
     } else if (id == R.id.nav_slideshow) {
-
     } else if (id == R.id.nav_manage) {
-
     } else if (id == R.id.nav_share) {
-
     } else if (id == R.id.nav_send) {
-
     }
 
     DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
