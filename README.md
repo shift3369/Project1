@@ -1,7 +1,5 @@
 # Project1
-
-## 사용법
-1. 처음 프로젝트 사용시 저장될 폴더에 복사한다.
+>1. 처음 프로젝트 사용시 저장될 폴더에 복사한다.
 ```
 git clone https://github.com/Membership3/Project1.git
 ```
